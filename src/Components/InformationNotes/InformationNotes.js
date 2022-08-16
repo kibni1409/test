@@ -1,7 +1,8 @@
 import classes from "./InformationNotes.module.css"
 import {useParams} from "react-router-dom";
 import {useState} from "react";
-import { useForm } from "react-hook-form";
+import InfoNote from "./Mode/InfoNote";
+import EditNote from "./Mode/EditNote";
 
 const InformationNotes = (props) => {
 
@@ -11,57 +12,68 @@ const InformationNotes = (props) => {
     const ActivateEditMode = () => {
         setEditMode(true)
     }
+    const DeactivateEditMode = () => {
+        setEditMode(false)
+    }
 
     const DeleteNote = () => {
         props.DeleteNote(parseInt(param.id))
     }
 
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors }
-    } = useForm();
+    let ElementNotes;
 
-    const onSubmit = (data) => {
-        props.EditNote(parseInt(param.id), data.textHeading, data.textNote, data.status)
-        reset();
-        setEditMode(false)
-    };
+    if (param.id === "new") {
+        ElementNotes = <EditNote
+            param={param}
+            DeactivateEditMode={DeactivateEditMode}
+            AddNotes={props.AddNotes}
+            listNotes={props.listNotes}
+        />
+    } else {
+        ElementNotes = props.listNotes.map(note => note.id === parseInt(param.id)
+            ? editMode
+                ? <EditNote
+                    key={note.id}
+                    id={note.id}
+                    heading={note.heading}
+                    text={note.text}
+                    status={note.status}
+                    param={param}
+                    DeactivateEditMode={DeactivateEditMode}
+                    EditNote={props.EditNote}
+                    listNotes={props.listNotes}
+                />
+                : <InfoNote
+                    key={note.id}
+                    id={note.id}
+                    heading={note.heading}
+                    text={note.text}
+                    status={note.status}
+                    ActivateEditMode={ActivateEditMode}
+                    DeleteNote={DeleteNote}
+                />
+            : null)
+    }
 
-
-    let ElementNotes = props.listNotes.map(note => note.id === parseInt(param.id)
-        ? editMode
-            ? <div key={note.id}>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input type={"text"} placeholder={note.heading} {...register("textHeading",
-                        { required: true ,
-                            minLength: 3
-                        })}/>
-                    {errors.textHeading && errors.textHeading.type ==="minLength" && <p>Min length 3</p>}
-                    <textarea placeholder={note.text} {...register("textNote",
-                        { required: true ,
-                            minLength: 3
-                    })}/>
-                    {errors.textNote && errors.textNote.type ==="minLength" && <p>Min length 3</p>}
-                    <input type={"text"} value={note.status} {...register("status")}/>
-                    <button type={"submit"}>Save</button>
-                </form>
-            </div>
-            : <div key={note.id}>
-                <h3>Information note</h3>
-                <h2>ID: {note.id}</h2>
-                <h3>{note.heading}</h3>
-                <p>{note.text}</p>
-                <p>{note.status}</p>
-                <button onClick={ActivateEditMode}>Edit</button>
-                <button onClick={DeleteNote}>Delete</button>
-            </div>
-        : null)
 
     return (
         <div className={classes.InformationNotes}>
             <h1>Information notes</h1>
+            {/*{param.id === "new"*/}
+            {/*?<form onSubmit={handleSubmit(onSubmit)}>*/}
+            {/*        <input type={"text"} placeholder="Heading" {...register("textHeading",*/}
+            {/*            { required: true ,*/}
+            {/*                minLength: 3*/}
+            {/*            })}/>*/}
+            {/*        {errors.textHeading && errors.textHeading.type ==="minLength" && <p>Min length 3</p>}*/}
+            {/*        <textarea placeholder="Text" {...register("textNote",*/}
+            {/*            { required: true ,*/}
+            {/*                minLength: 3*/}
+            {/*            })}/>*/}
+            {/*        {errors.textNote && errors.textNote.type ==="minLength" && <p>Min length 3</p>}*/}
+            {/*        <button type={"submit"}>Save</button>*/}
+            {/*    </form>*/}
+            {/*: null}*/}
             {ElementNotes}
         </div>
     )

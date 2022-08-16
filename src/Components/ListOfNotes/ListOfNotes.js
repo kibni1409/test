@@ -15,6 +15,7 @@ const ListOfNotes = (props) => {
     return(
         <div className={classes.ListOfNotes}>
             <h1>List of notes</h1>
+            <NavLink to="/note/new"><button>Create new note</button></NavLink>
             {ElementNotes}
         </div>
     )

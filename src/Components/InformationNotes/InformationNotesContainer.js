@@ -9,8 +9,8 @@ let mapStateToProps = (state) =>{
 }
 let mapDispatchToProps = (dispatch) =>{
     return{
-        AddNotes: (textNote) => {
-            dispatch(AddNotesActionCreator(textNote))
+        AddNotes: (textHeading, textNote) => {
+            dispatch(AddNotesActionCreator(textHeading, textNote))
         },
         EditNote: (idNote, textHeading, textNote, statusNote) => {
             dispatch(EditNotesActionCreator(idNote, textHeading, textNote, statusNote))

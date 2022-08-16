@@ -8,17 +8,19 @@ let initialState = {
         {id: 0, heading: "Выполнить первое задание", text: "Первое задание состоит в том, чтобы покормить кота", status: "completed"},
         {id: 1, heading: "Выполнить второе задание", text: "Второе задание состоит в том, чтобы помыть посуду", status: "in_progress"},
         {id: 2, heading: "Выполнить третье задание", text: "Третье задание состоит в том, чтобы почитать статью", status: "pending"},
-    ]
+    ],
+    IdForNewNotes: 3
 }
 
 
 const NotesReducer = (state = initialState, action) => {
     switch (action.type){
         case ADD_NOTE: {
-            let size = state.notes.length
+            let size = state.IdForNewNotes
             return{
                 ...state,
-                notes: [...state.notes, {id: size+1, heading: action.textHeading, text: action.textNote, status: "pending" }]
+                notes: [...state.notes, {id: size+1, heading: action.textHeading, text: action.textNote, status: "pending" }],
+                IdForNewNotes: size+1
             }
         }
         case EDIT_NOTE:{
