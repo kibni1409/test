@@ -1,0 +1,5 @@
+.ListOfNotes {
+  border: 5px black solid;
+  grid-area: List;
+  height: 80vh;
+}
