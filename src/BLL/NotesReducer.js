@@ -5,9 +5,9 @@ const DELETE_NOTE = "NotesReducer/DELETE_NOTE"
 
 let initialState = {
     notes: [
-        {id: 0, text: "Выполнить первое задание", status: "completed"},
-        {id: 1, text: "Выполнить второе задание", status: "in_progress"},
-        {id: 2, text: "Выполнить третье задание", status: "pending"},
+        {id: 0, heading: "Выполнить первое задание", text: "Первое задание состоит в том, чтобы покормить кота", status: "completed"},
+        {id: 1, heading: "Выполнить второе задание", text: "Второе задание состоит в том, чтобы помыть посуду", status: "in_progress"},
+        {id: 2, heading: "Выполнить третье задание", text: "Третье задание состоит в том, чтобы почитать статью", status: "pending"},
     ]
 }
 
@@ -18,18 +18,18 @@ const NotesReducer = (state = initialState, action) => {
             let size = state.notes.length
             return{
                 ...state,
-                notes: [...state.notes, {id: size+1, text: action.text, status: "pending" }]
+                notes: [...state.notes, {id: size+1, heading: action.textHeading, text: action.textNote, status: "pending" }]
             }
         }
         case EDIT_NOTE:{
             return{
                 ...state,
                 notes: [...state.notes.map(note => note.id === action.id
-                ? {id: action.id, text: action.text, status: action.status}
-                : note
-                )]
+                ? note = {id: action.id, heading: action.textHeading, text: action.textNote, status: action.status}
+                : note)]
             }
         }
+            // id: action.id, heading: action.textHeading, text: action.textNote, status: action.status
         case DELETE_NOTE:{
             return{
                 ...state,
@@ -42,17 +42,19 @@ const NotesReducer = (state = initialState, action) => {
     }
 }
 
-export const AddNotesActionCreator = (textNote) => {
+export const AddNotesActionCreator = (textHeading, textNote) => {
     return{
         type: "NotesReducer/ADD_NOTE",
-        text: textNote
+        textHeading: textHeading,
+        textNote: textNote
     }
 }
-export const EditNotesActionCreator = (idNote, textNote, statusNote) => {
+export const EditNotesActionCreator = (idNote, textHeading, textNote, statusNote) => {
     return{
         type: "NotesReducer/EDIT_NOTE",
         id: idNote,
-        text: textNote,
+        textHeading: textHeading,
+        textNote: textNote,
         status: statusNote
     }
 }

@@ -1,8 +1,16 @@
 import classes from "./ListOfNotes.module.css"
 import {NavLink} from "react-router-dom";
+import {useEffect} from "react";
 
 const ListOfNotes = (props) => {
-    let ElementNotes = props.listNotes.map(note => <NavLink to={"/note/" + note.id} key={note.id} ><p>{note.text}</p></NavLink>)
+
+    let ElementNotes = props.listNotes.map(note => <NavLink to={"/note/" + note.id} key={note.id} ><p>{note.heading}</p></NavLink>)
+
+    useEffect(() => {
+        ElementNotes = props.listNotes.map(note => <NavLink to={"/note/" + note.id} key={note.id} ><p>{note.heading}</p></NavLink>)
+    },[props.listNotes])
+
+
 
     return(
         <div className={classes.ListOfNotes}>

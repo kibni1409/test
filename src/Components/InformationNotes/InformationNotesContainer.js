@@ -12,8 +12,8 @@ let mapDispatchToProps = (dispatch) =>{
         AddNotes: (textNote) => {
             dispatch(AddNotesActionCreator(textNote))
         },
-        EditNote: (idNote, textNote, statusNote) => {
-            dispatch(EditNotesActionCreator(idNote, textNote, statusNote))
+        EditNote: (idNote, textHeading, textNote, statusNote) => {
+            dispatch(EditNotesActionCreator(idNote, textHeading, textNote, statusNote))
         },
         DeleteNote: (idNote) => {
             dispatch(DeleteNotesActionCreator(idNote))
