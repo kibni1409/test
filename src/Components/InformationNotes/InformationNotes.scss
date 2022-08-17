@@ -1,5 +1,43 @@
+@import "./../ListOfNotes/ListOfNotes";
+
 .InformationNotes{
-  border: 5px black solid;
   grid-area: Info;
   height: 80vh;
+  margin-top: 40px;
+
+  @include Button
+}
+
+form{
+  border-radius: 20px;
+  padding: 15px;
+  margin: auto;
+  width: 50%;
+
+  input{
+    margin: 10px;
+    border-radius: 50px;
+    padding: 10px;
+    border: 1px #3a404b solid;
+  }
+  textarea{
+    padding: 10px;
+    border-radius: 20px;
+    width: 300px;
+    resize: none;
+    height: 200px;
+  }
+  label{
+
+  }
+  fieldset{
+    border-radius: 20px;
+
+    legend{
+      text-align: left;
+    }
+  }
+  p{
+    margin: 10px;
+  }
 }

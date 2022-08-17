@@ -12,7 +12,7 @@ const InfoNote = (props) => {
                 ? <button onClick={() => props.EditNotes(props.id, props.heading, props.text, "in_progress")}>Start</button>
                 : props.status === "in_progress"
                     ? <button onClick={() => props.EditNotes(props.id, props.heading, props.text, "completed")}>Complete</button>
-                    : <p>Completed</p>}
+                    : null}
         </div>
     )
 }

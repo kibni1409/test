@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   display: grid;
+  font-family: 'Montserrat', sans-serif;
   grid-template-columns: 20% 80%;
   grid-template-areas:
   "List Info";
