@@ -31,7 +31,6 @@ const NotesReducer = (state = initialState, action) => {
                 : note)]
             }
         }
-            // id: action.id, heading: action.textHeading, text: action.textNote, status: action.status
         case DELETE_NOTE:{
             return{
                 ...state,

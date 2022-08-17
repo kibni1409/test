@@ -40,7 +40,7 @@ const InformationNotes = (props) => {
                     status={note.status}
                     param={param}
                     DeactivateEditMode={DeactivateEditMode}
-                    EditNote={props.EditNote}
+                    EditNotes={props.EditNotes}
                     listNotes={props.listNotes}
                 />
                 : <InfoNote
@@ -51,29 +51,14 @@ const InformationNotes = (props) => {
                     status={note.status}
                     ActivateEditMode={ActivateEditMode}
                     DeleteNote={DeleteNote}
+                    EditNotes={props.EditNotes}
                 />
             : null)
     }
 
-
     return (
         <div className={classes.InformationNotes}>
             <h1>Information notes</h1>
-            {/*{param.id === "new"*/}
-            {/*?<form onSubmit={handleSubmit(onSubmit)}>*/}
-            {/*        <input type={"text"} placeholder="Heading" {...register("textHeading",*/}
-            {/*            { required: true ,*/}
-            {/*                minLength: 3*/}
-            {/*            })}/>*/}
-            {/*        {errors.textHeading && errors.textHeading.type ==="minLength" && <p>Min length 3</p>}*/}
-            {/*        <textarea placeholder="Text" {...register("textNote",*/}
-            {/*            { required: true ,*/}
-            {/*                minLength: 3*/}
-            {/*            })}/>*/}
-            {/*        {errors.textNote && errors.textNote.type ==="minLength" && <p>Min length 3</p>}*/}
-            {/*        <button type={"submit"}>Save</button>*/}
-            {/*    </form>*/}
-            {/*: null}*/}
             {ElementNotes}
         </div>
     )
