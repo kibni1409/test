@@ -6,44 +6,18 @@
   padding-right: 20px;
   padding-left: 20px;
 }
+.ListOfNotes h1 {
+  color: red;
+}
+.ListOfNotes input {
+  margin-top: 50px;
+  width: 100px;
+}
 .ListOfNotes p {
   padding: 5px;
   border-radius: 50px;
   -webkit-box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
           box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
-}
-.ListOfNotes button {
-  color: #232323;
-  background: transparent;
-  border: 1px solid #232323;
-  position: relative;
-  font-size: 14px;
-  letter-spacing: 0.3em;
-  font-family: "Montserrat", sans-serif;
-  padding: 17px 24px 17px 29px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-  margin-right: 20px;
-  margin-top: 20px;
-}
-.ListOfNotes button:before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 100%;
-  height: 100%;
-  background: #32D4E2;
-  z-index: -1;
-  -webkit-transition: 0.25s ease;
-  transition: 0.25s ease;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-}
-.ListOfNotes button:hover:before {
-  -webkit-transform: translate(4px, 4px);
-          transform: translate(4px, 4px);
 }
 
 .NavLink {
@@ -81,6 +55,7 @@
   cursor: pointer;
   margin-right: 20px;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 .InformationNotes button:before {
   content: "";
@@ -101,31 +76,31 @@
           transform: translate(4px, 4px);
 }
 
-form {
+.form {
   border-radius: 20px;
   padding: 15px;
   margin: auto;
   width: 50%;
 }
-form input {
+.form input {
   margin: 10px;
   border-radius: 50px;
   padding: 10px;
   border: 1px #3a404b solid;
 }
-form textarea {
+.form textarea {
   padding: 10px;
   border-radius: 20px;
   width: 300px;
   resize: none;
   height: 200px;
 }
-form fieldset {
+.form fieldset {
   border-radius: 20px;
 }
-form fieldset legend {
+.form fieldset legend {
   text-align: left;
 }
-form p {
+.form p {
   margin: 10px;
 }

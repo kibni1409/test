@@ -1,6 +1,7 @@
 const ADD_NOTE = "NotesReducer/ADD_NOTE"
 const EDIT_NOTE = "NotesReducer/EDIT_NOTE"
 const DELETE_NOTE = "NotesReducer/DELETE_NOTE"
+const SEARCH_NOTE = "NotesReducer/SEARCH_NOTE"
 
 
 let initialState = {
@@ -9,7 +10,8 @@ let initialState = {
         {id: 1, heading: "Выполнить второе задание", text: "Второе задание состоит в том, чтобы помыть посуду", status: "in_progress"},
         {id: 2, heading: "Выполнить третье задание", text: "Третье задание состоит в том, чтобы почитать статью", status: "pending"},
     ],
-    IdForNewNotes: 3
+    IdForNewNotes: 3,
+    searchNotes: []
 }
 
 
@@ -35,6 +37,16 @@ const NotesReducer = (state = initialState, action) => {
             return{
                 ...state,
                 notes: [...state.notes.filter(note => note.id !== action.id)]
+            }
+        }
+        case SEARCH_NOTE:{
+            return {
+                ...state,
+                searchNotes: [...state.notes.filter(note => {
+                    let notelower = note.heading.toLowerCase()
+                    let actionlower = action.text.toLowerCase()
+                    return notelower.includes(actionlower)
+                })]
             }
         }
         default:{
@@ -63,6 +75,12 @@ export const DeleteNotesActionCreator = (idNote) => {
     return{
         type: "NotesReducer/DELETE_NOTE",
         id: idNote
+    }
+}
+export const SearchNotesActionCreator = (textSearch) => {
+    return{
+        type: "NotesReducer/SEARCH_NOTE",
+        text: textSearch
     }
 }
 

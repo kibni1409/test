@@ -1,4 +1,5 @@
 import {useForm} from "react-hook-form";
+import classes from "./../InformationNotes.module.css"
 
 
 const EditNote = (props) => {
@@ -22,7 +23,7 @@ const EditNote = (props) => {
 
     return (
         <div key={props.id}>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
                     <legend>Create a new note</legend>
                     <p>Heading</p>

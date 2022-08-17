@@ -12,6 +12,7 @@
     cursor: pointer;
     margin-right: 20px;
     margin-top: 20px;
+    margin-bottom: 40px;
   }
   button:before {
     content: "";
@@ -38,6 +39,15 @@
   padding-right: 20px;
   padding-left: 20px;
 
+  h1{
+    color: red;
+  }
+
+  input{
+    margin-top: 50px;
+    width: 100px;
+  }
+
   p{
     padding: 5px;
     border-radius: 50px;
@@ -45,7 +55,7 @@
     10px 10px 15px rgba(70,70,70,0.12);
   }
 
-  @include Button;
+  //@include Button;
 
 
 }
