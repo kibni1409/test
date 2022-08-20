@@ -1,19 +1,24 @@
 .ListOfNotes {
-  border-right: 5px #3a404b solid;
-  grid-area: List;
-  margin-top: 40px;
-  height: 90vh;
+  margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
   overflow: auto;
-  resize: horizontal;
-  max-width: 900px;
-  min-width: 200px;
 }
-.ListOfNotes input {
+
+.ListOfNotesDiv {
+  margin: 40px;
+  height: 90vh;
+  max-width: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 165px;
+  width: 600px;
+}
+.ListOfNotesDiv input {
   width: 100px;
 }
-.ListOfNotes p {
+.ListOfNotesDiv p {
   padding: 5px;
   border-radius: 50px;
   -webkit-box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
@@ -74,11 +79,17 @@
   color: green;
 }
 
+.Teg {
+  grid-area: Border;
+  background: rgba(1, 1, 1, 0.2);
+  cursor: col-resize;
+  height: 90vh;
+  width: 5px;
+}
+
 .InformationNotes {
-  grid-area: Info;
   height: 80vh;
-  margin-top: 40px;
-  min-width: 400px;
+  margin: 40px auto;
 }
 
 .Edit__button {
@@ -261,7 +272,6 @@
   margin: auto;
   padding: 15px;
   overflow: auto;
-  max-width: 50%;
 }
 .form input {
   margin: 10px;

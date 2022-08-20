@@ -1,10 +1,8 @@
 @import "./../ListOfNotes/ListOfNotes";
 
 .InformationNotes{
-  grid-area: Info;
   height: 80vh;
-  margin-top: 40px;
-  min-width: 400px;
+  margin: 40px auto;
 }
 
 .Edit{
@@ -28,7 +26,7 @@
   margin: auto;
   padding: 15px;
   overflow: auto;
-  max-width: 50%;
+  //max-width: 50%;
   //width: 50%;
 
   input{
