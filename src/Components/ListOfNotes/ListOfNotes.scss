@@ -1,5 +1,5 @@
-@mixin Button {
-  button {
+@mixin Button ($color) {
+  &__button {
     color: #232323;
     background: transparent;
     border: 1px solid #232323;
@@ -14,19 +14,19 @@
     margin-top: 20px;
     margin-bottom: 40px;
   }
-  button:before {
+  &__button:before {
     content: "";
     position: absolute;
     top: 5px;
     left: 5px;
     width: 100%;
     height: 100%;
-    background: #32D4E2;
+    background: $color;
     z-index: -1;
     transition: .25s ease;
     transform: translate(0, 0);
   }
-  button:hover:before {
+  &__button:hover:before {
     transform: translate(4px, 4px);
   }
 }
@@ -39,12 +39,7 @@
   padding-right: 20px;
   padding-left: 20px;
 
-  h1{
-    color: red;
-  }
-
   input{
-    margin-top: 50px;
     width: 100px;
   }
 
@@ -53,12 +48,16 @@
     border-radius: 50px;
     box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
     10px 10px 15px rgba(70,70,70,0.12);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  //@include Button;
-
-
 }
+.New{
+  @include Button (orange);
+}
+
 .NavLink{
   text-decoration: none;
 }
@@ -72,4 +71,5 @@
 .Completed{
   color: green;
 }
+
 

@@ -27,7 +27,6 @@ const EditNote = (props) => {
                 <fieldset>
                     <legend>Create a new note</legend>
                     <p>Heading</p>
-                    {/*<label htmlFor="textHeading">Heading:</label>*/}
                     <input type={"text"} placeholder={props.heading} {...register("textHeading",
                         {
                             required: true,
@@ -35,7 +34,6 @@ const EditNote = (props) => {
                         })}/><br/>
                     {errors.textHeading && errors.textHeading.type === "minLength" && <p>Min length 3</p>}
                     <p>Text</p>
-                    {/*<label htmlFor="textHeading">Text:</label>*/}
                     <textarea placeholder={props.text} {...register("textNote",
                         {
                             required: true,
@@ -43,8 +41,7 @@ const EditNote = (props) => {
                         })}/><br/>
                     {errors.textNote && errors.textNote.type === "minLength" && <p>Min length 3</p>}
                 </fieldset>
-                    <button type={"submit"}>Save</button>
-
+                <button className={classes.Save__button} type={"submit"}>Save</button>
             </form>
         </div>
     )

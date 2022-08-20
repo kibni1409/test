@@ -4,8 +4,22 @@
   grid-area: Info;
   height: 80vh;
   margin-top: 40px;
+}
 
-  @include Button
+.Edit{
+  @include Button(#bfde44)
+}
+.Start{
+  @include Button(#32d9a4)
+}
+.Delete{
+  @include Button(#d51e1e)
+}
+.Save{
+  @include Button(#53ea53)
+}
+.Complete{
+  @include Button(#30a9a9)
 }
 
 .form{

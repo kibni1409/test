@@ -6,11 +6,7 @@
   padding-right: 20px;
   padding-left: 20px;
 }
-.ListOfNotes h1 {
-  color: red;
-}
 .ListOfNotes input {
-  margin-top: 50px;
   width: 100px;
 }
 .ListOfNotes p {
@@ -18,6 +14,44 @@
   border-radius: 50px;
   -webkit-box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
           box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.New__button {
+  color: #232323;
+  background: transparent;
+  border: 1px solid #232323;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  font-family: "Montserrat", sans-serif;
+  padding: 17px 24px 17px 29px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.New__button:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  background: orange;
+  z-index: -1;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.New__button:hover:before {
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
 }
 
 .NavLink {
@@ -41,7 +75,8 @@
   height: 80vh;
   margin-top: 40px;
 }
-.InformationNotes button {
+
+.Edit__button {
   color: #232323;
   background: transparent;
   border: 1px solid #232323;
@@ -57,21 +92,161 @@
   margin-top: 20px;
   margin-bottom: 40px;
 }
-.InformationNotes button:before {
+.Edit__button:before {
   content: "";
   position: absolute;
   top: 5px;
   left: 5px;
   width: 100%;
   height: 100%;
-  background: #32D4E2;
+  background: #bfde44;
   z-index: -1;
   -webkit-transition: 0.25s ease;
   transition: 0.25s ease;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
 }
-.InformationNotes button:hover:before {
+.Edit__button:hover:before {
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+}
+
+.Start__button {
+  color: #232323;
+  background: transparent;
+  border: 1px solid #232323;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  font-family: "Montserrat", sans-serif;
+  padding: 17px 24px 17px 29px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.Start__button:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  background: #32d9a4;
+  z-index: -1;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.Start__button:hover:before {
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+}
+
+.Delete__button {
+  color: #232323;
+  background: transparent;
+  border: 1px solid #232323;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  font-family: "Montserrat", sans-serif;
+  padding: 17px 24px 17px 29px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.Delete__button:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  background: #d51e1e;
+  z-index: -1;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.Delete__button:hover:before {
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+}
+
+.Save__button {
+  color: #232323;
+  background: transparent;
+  border: 1px solid #232323;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  font-family: "Montserrat", sans-serif;
+  padding: 17px 24px 17px 29px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.Save__button:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  background: #53ea53;
+  z-index: -1;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.Save__button:hover:before {
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+}
+
+.Complete__button {
+  color: #232323;
+  background: transparent;
+  border: 1px solid #232323;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  font-family: "Montserrat", sans-serif;
+  padding: 17px 24px 17px 29px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.Complete__button:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  background: #30a9a9;
+  z-index: -1;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.Complete__button:hover:before {
   -webkit-transform: translate(4px, 4px);
           transform: translate(4px, 4px);
 }
