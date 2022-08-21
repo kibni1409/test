@@ -23,13 +23,16 @@ const InformationNotes = (props) => {
     let ElementNotes;
 
     if (param.id === "new") {
-        ElementNotes = <EditNote
-            param={param}
-            DeactivateEditMode={DeactivateEditMode}
-            AddNotes={props.AddNotes}
-            listNotes={props.listNotes}
-        />
-    } else {
+        // ElementNotes = <EditNote
+        //     param={param}
+        //     DeactivateEditMode={DeactivateEditMode}
+        //     AddNotes={props.AddNotes}
+        //     listNotes={props.listNotes}
+        //     heading={""}
+        //     text={""}
+        // />
+    }
+    else {
         ElementNotes = props.listNotes.map(note => note.id === parseInt(param.id)
             ? editMode
                 ? <EditNote

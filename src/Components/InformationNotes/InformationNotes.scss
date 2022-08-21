@@ -9,16 +9,25 @@
   @include Button(#bfde44)
 }
 .Start{
-  @include Button(#32d9a4)
+  @include Button(#32d9a4);
+  &__Status{
+    color: #3a404b;
+  }
 }
 .Delete{
-  @include Button(#d51e1e)
+  @include Button(#d51e1e);
+  &__Status{
+    color: green;
+  }
 }
 .Save{
   @include Button(#53ea53)
 }
 .Complete{
-  @include Button(#30a9a9)
+  @include Button(#30a9a9);
+  &__Status{
+    color: #30a9a9;
+  }
 }
 
 .form{

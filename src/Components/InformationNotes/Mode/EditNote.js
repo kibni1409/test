@@ -1,8 +1,18 @@
 import {useForm} from "react-hook-form";
 import classes from "./../InformationNotes.module.css"
-
+import {useState} from "react";
 
 const EditNote = (props) => {
+
+    let [heading, setHeading] = useState(props.heading)
+    let [text, setText] = useState(props.text)
+
+    const ChangeHeading = (e) => {
+        setHeading(e.target.value)
+    }
+    const ChangeText = (e) => {
+        setText(e.target.value)
+    }
 
     const {
         register,
@@ -27,18 +37,27 @@ const EditNote = (props) => {
                 <fieldset>
                     <legend>Create a new note</legend>
                     <p>Heading</p>
-                    <input type={"text"} placeholder={props.heading} {...register("textHeading",
+                    <input {...register("textHeading",
                         {
                             required: true,
                             minLength: 3
-                        })}/><br/>
+                        })}
+                           type={"text"}
+                           placeholder={heading}
+                           onChange={ChangeHeading}
+                           value={heading}
+                    /><br/>
                     {errors.textHeading && errors.textHeading.type === "minLength" && <p>Min length 3</p>}
                     <p>Text</p>
-                    <textarea placeholder={props.text} {...register("textNote",
-                        {
-                            required: true,
-                            minLength: 3
-                        })}/><br/>
+                    <textarea
+                        {...register("textNote",
+                            {
+                                required: true,
+                                minLength: 3
+                            })}
+                        onChange={ChangeText}
+                        value={text}
+                    /><br/>
                     {errors.textNote && errors.textNote.type === "minLength" && <p>Min length 3</p>}
                 </fieldset>
                 <button className={classes.Save__button} type={"submit"}>Save</button>

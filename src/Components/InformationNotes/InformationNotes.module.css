@@ -162,6 +162,9 @@
   -webkit-transform: translate(4px, 4px);
           transform: translate(4px, 4px);
 }
+.Start__Status {
+  color: #3a404b;
+}
 
 .Delete__button {
   color: #232323;
@@ -196,6 +199,9 @@
 .Delete__button:hover:before {
   -webkit-transform: translate(4px, 4px);
           transform: translate(4px, 4px);
+}
+.Delete__Status {
+  color: green;
 }
 
 .Save__button {
@@ -266,6 +272,9 @@
 .Complete__button:hover:before {
   -webkit-transform: translate(4px, 4px);
           transform: translate(4px, 4px);
+}
+.Complete__Status {
+  color: #30a9a9;
 }
 
 .form {

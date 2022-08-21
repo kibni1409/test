@@ -5,8 +5,6 @@ import React from "react";
 
 const ListOfNotes = (props) => {
 
-
-
     return (
         <div className={classes.ListOfNotesDiv} id="List" >
             <div className={classes.ListOfNotes} >
@@ -20,7 +18,6 @@ const ListOfNotes = (props) => {
                     searchNotes={props.searchNotes}
                 />
             </div>
-
         </div>
     )
 }

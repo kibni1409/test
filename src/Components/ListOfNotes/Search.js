@@ -26,15 +26,12 @@ const Search = (props) => {
             }
         }
         let SearchInput = document.getElementById('Search')
-        console.log(SearchInput)
         SearchInput.value = '';
         Search(eFake)
     },[props.listNotes])
 
     const Search = (e) => {
         props.SearchNotes(e.target.value)
-        console.log(props.searchNotes)
-        console.log(e.target.value)
     }
 
     return (
