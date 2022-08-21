@@ -79,10 +79,11 @@
   color: green;
 }
 
-.Teg {
+.Border {
   grid-area: Border;
   background: rgba(1, 1, 1, 0.2);
   cursor: col-resize;
   height: 90vh;
   width: 5px;
+  min-width: 3px;
 }

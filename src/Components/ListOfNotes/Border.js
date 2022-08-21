@@ -12,9 +12,6 @@ const Border = () => {
 
         setInitialPos(e.clientX);
         setInitialSize(resizable.offsetWidth);
-        console.log("Мышь:" + e.clientX)
-        console.log("Размер:" + resizable.offsetWidth)
-
     }
 
     const resize = (e) => {
@@ -22,12 +19,10 @@ const Border = () => {
         let resizable = document.getElementById('List');
 
         resizable.style.width = `${parseInt(initialSize) + parseInt(e.clientX - initialPos)}px`;
-        console.log("Итог:" + resizable.style.width)
-
     }
 
     return(
-        <div className={classes.Teg}
+        <div className={classes.Border}
              id="Teg"
              draggable='true'
              onDragStart={initial}

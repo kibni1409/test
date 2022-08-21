@@ -25,17 +25,21 @@ const Search = (props) => {
                 value: ""
             }
         }
+        let SearchInput = document.getElementById('Search')
+        console.log(SearchInput)
+        SearchInput.value = '';
         Search(eFake)
-    },[])
+    },[props.listNotes])
 
     const Search = (e) => {
-        console.log(props.searchNotes)
         props.SearchNotes(e.target.value)
+        console.log(props.searchNotes)
+        console.log(e.target.value)
     }
 
     return (
         <>
-            <input onChange={Search} placeholder="Search notes"/>
+            <input onChange={Search} id="Search" placeholder="Search notes"/>
             {ElementSearch}
         </>
     )

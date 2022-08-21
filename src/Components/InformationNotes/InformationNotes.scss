@@ -26,21 +26,21 @@
   margin: auto;
   padding: 15px;
   overflow: auto;
-  //max-width: 50%;
-  //width: 50%;
+  min-width: 800px;
 
   input{
     margin: 10px;
     border-radius: 50px;
     padding: 10px;
     border: 1px #3a404b solid;
+    width: 500px;
   }
   textarea{
     padding: 10px;
     border-radius: 20px;
-    width: 300px;
+    width: 500px;
     resize: none;
-    height: 200px;
+    height: 400px;
   }
   label{
 

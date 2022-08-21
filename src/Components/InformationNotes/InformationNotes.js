@@ -1,5 +1,5 @@
 import classes from "./InformationNotes.module.css"
-import {useParams} from "react-router-dom";
+import {Navigate, useParams} from "react-router-dom";
 import {useState} from "react";
 import InfoNote from "./Mode/InfoNote";
 import EditNote from "./Mode/EditNote";
@@ -54,7 +54,16 @@ const InformationNotes = (props) => {
                     EditNotes={props.EditNotes}
                 />
             : null)
+        if(ElementNotes.every(element => element === null)){
+            return <Navigate to="/note/new" />
+        }
+        else{
+            return ElementNotes
+        }
     }
+
+
+
 
     return (
         <div className={classes.InformationNotes}>

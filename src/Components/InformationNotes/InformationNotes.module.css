@@ -79,12 +79,13 @@
   color: green;
 }
 
-.Teg {
+.Border {
   grid-area: Border;
   background: rgba(1, 1, 1, 0.2);
   cursor: col-resize;
   height: 90vh;
   width: 5px;
+  min-width: 3px;
 }
 
 .InformationNotes {
@@ -272,19 +273,21 @@
   margin: auto;
   padding: 15px;
   overflow: auto;
+  min-width: 800px;
 }
 .form input {
   margin: 10px;
   border-radius: 50px;
   padding: 10px;
   border: 1px #3a404b solid;
+  width: 500px;
 }
 .form textarea {
   padding: 10px;
   border-radius: 20px;
-  width: 300px;
+  width: 500px;
   resize: none;
-  height: 200px;
+  height: 400px;
 }
 .form fieldset {
   border-radius: 20px;

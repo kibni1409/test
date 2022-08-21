@@ -2,9 +2,9 @@ import classes from "./../InformationNotes.module.css"
 
 const InfoNote = (props) => {
     return (
-        <div key={props.id}>
-            <h3>Information note</h3>
-            <h2>ID: {props.id}</h2>
+        <div key={props.id} className={classes.form} >
+            <h1>Information note</h1>
+            <span>ID: {props.id}</span>
             <h3>{props.heading}</h3>
             <p>{props.text}</p>
             <p>{props.status}</p>

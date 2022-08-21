@@ -15,8 +15,6 @@ function App() {
                 <ListOfNotesContainer/>
                 <Border/>
                 <Routes>
-                    <Route path="*" element={<ListOfNotesContainer/>}/>
-                    <Route path="/note" element={<ListOfNotesContainer/>}/>
                     <Route path="note/:id" element={<InformationNotesContainer/>}/>
                 </Routes>
             </div>
