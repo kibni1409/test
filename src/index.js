@@ -7,6 +7,8 @@ import store from "./BLL/Store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    //Подключаем отслеживание маршрута
+    //Подключаем store, что дает нас использовать HOC connect
   <React.StrictMode>
       <Provider store={store}>
         <App />

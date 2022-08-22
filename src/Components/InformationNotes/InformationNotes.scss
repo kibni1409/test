@@ -1,15 +1,17 @@
 @import "./../ListOfNotes/ListOfNotes";
 
+// Компанента с информацией о заметке
 .InformationNotes{
   height: 80vh;
   margin: 40px auto;
 }
-
+//Кнопки
 .Edit{
   @include Button(#bfde44)
 }
 .Start{
   @include Button(#32d9a4);
+  //Цвет состояния
   &__Status{
     color: #3a404b;
   }
@@ -30,6 +32,7 @@
   }
 }
 
+//Форма редактирования
 .form{
   border-radius: 20px;
   margin: auto;
@@ -37,6 +40,7 @@
   overflow: auto;
   min-width: 800px;
 
+  //Заголовок
   input{
     margin: 10px;
     border-radius: 50px;
@@ -44,6 +48,7 @@
     border: 1px #3a404b solid;
     width: 500px;
   }
+  //Текст
   textarea{
     padding: 10px;
     border-radius: 20px;
@@ -51,16 +56,15 @@
     resize: none;
     height: 400px;
   }
-  label{
-
-  }
+  //Обертка формы
   fieldset{
     border-radius: 20px;
-
+    //Заголовок обертки
     legend{
       text-align: left;
     }
   }
+  //Абзацы с информацией о заметке
   p{
     margin: 10px;
   }

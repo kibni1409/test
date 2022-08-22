@@ -2,6 +2,9 @@ import classes from "./../InformationNotes.module.css"
 
 const InfoNote = (props) => {
     return (
+        //Вывод информации о заметке
+        //В зависимости от состояния заметки, будет меняться цвет у состояния
+        //В зависимости от состояния заметки, будет выводиться соответствующая кнопка действия
         <div key={props.id} className={classes.form}>
             <h1>Information note</h1>
             <span>ID: {props.id}</span>

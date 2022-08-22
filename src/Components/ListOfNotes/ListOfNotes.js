@@ -5,6 +5,10 @@ import React from "react";
 
 const ListOfNotes = (props) => {
 
+    //Выводим кнопку создания новой заметки
+    //Выводим строку поиска
+    //Выводим список заметок
+
     return (
         <div className={classes.ListOfNotesDiv} id="List" >
             <div className={classes.ListOfNotes} >
